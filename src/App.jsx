@@ -1,16 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import MuiTable from "./components/MuiTable";
+import UserCard from "./components/UserCard";
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: { main: "#646cff" },
+    background: { default: "#ffffff", paper: "#f9f9f9" },
+    text: { primary: "#213547" },
+  },
+}
+);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedUser, setSelectedUser] = useState(null);
 
   return (
-    <>     
-      <h1>Vite + React</h1>      
-    </>
+    <ThemeProvider theme={lightTheme}>
+      <CssBaseline></CssBaseline>
+      <MuiTable onRowSelect={setSelectedUser} />
+      {selectedUser && <UserCard user={selectedUser} />}
+    </ThemeProvider>
   )
 }
 
-export default App
+export default App;
