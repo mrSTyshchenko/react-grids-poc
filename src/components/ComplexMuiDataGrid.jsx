@@ -9,8 +9,6 @@ const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "name", headerName: "Name", width: 130 },
   { field: "email", headerName: "Email", width: 180 },
-
-  // 🔵 Progress Bar Column
   {
     field: "progress",
     headerName: "Progress",
@@ -19,8 +17,6 @@ const columns = [
       <LinearProgress variant="determinate" value={params.value} sx={{ width: "100%" }} />
     ),
   },
-
-  // ✅ Status Column with Icons
   {
     field: "status",
     headerName: "Status",
@@ -39,7 +35,6 @@ const columns = [
     },
   },
 
-  // 🔴 Action Column with Button
   {
     field: "action",
     headerName: "Action",
@@ -48,7 +43,6 @@ const columns = [
   },
 ];
 
-// 🔥 Demo Data (No Props Needed)
 const rows = [
   { id: 1, name: "John Doe", email: "john@example.com", progress: 80, status: "completed" },
   { id: 2, name: "Jane Smith", email: "jane@example.com", progress: 45, status: "pending" },
