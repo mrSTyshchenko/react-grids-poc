@@ -6,6 +6,7 @@ import { createTheme, CssBaseline, ThemeProvider, Typography } from '@mui/materi
 import Grid from '@mui/material/Grid2';
 import MuiDataGrid from './components/MuiDataGrid';
 import ComplexMuiDataGrid from './components/ComplexMuiDataGrid';
+import ExpandableMuiDataGrid from './components/ExpandableMuiDataGrid';
 
 const lightTheme = createTheme({
   palette: {
@@ -47,6 +48,10 @@ function App() {
         <Grid size={{ md: 12 }}>
           <Typography sx={{ fontSize: 20 }}>Complex grid</Typography>
           <ComplexMuiDataGrid></ComplexMuiDataGrid>
+        </Grid>
+        <Grid size={{ md: 12 }}>
+          <Typography sx={{ fontSize: 20 }}>Grid with nested rows</Typography>
+          <ExpandableMuiDataGrid></ExpandableMuiDataGrid>
         </Grid>
       </Grid>
     </ThemeProvider>
